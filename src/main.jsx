@@ -13,7 +13,7 @@ const store=configureStore({
     user:userReducer,
     theme:themeReducer
   }
-})   
+})
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

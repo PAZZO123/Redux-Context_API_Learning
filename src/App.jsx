@@ -1,6 +1,8 @@
 import ChangeColor from './components/ChangeColor'
+import Employees from './components/Fetch'
 import Login from './components/Login'
 import Profile from './components/Profile'
+import ToggleButtons from './components/ToggleButton'
 export default function App(){
   return(
     <>
@@ -8,6 +10,8 @@ export default function App(){
      <Profile/>
      <Login/>
      <ChangeColor/>
+
+    <ToggleButtons/>
     </div>
     </>
   )
