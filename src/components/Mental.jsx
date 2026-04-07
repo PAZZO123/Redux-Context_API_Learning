@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 
 
@@ -10,7 +10,8 @@ export default function Mental(){
         digit:false,
         lower:false,
         upper:false,
-        special:false
+        special:false,
+        value:""
     })
     const [showPassword, setShowPassword]=useState(false)
  const isDisabled =! Object.values(value).every(Boolean);
@@ -33,7 +34,8 @@ export default function Mental(){
     lower: hasLower,
     upper: hasUpper,
     digit: hasDigit,
-    special: hasSpecial
+    special: hasSpecial,
+    value:password
   });
     }
     return(
@@ -42,7 +44,7 @@ export default function Mental(){
         <form action="">
         <div className="flex">
              <input type={showPassword?"text":"password"} placeholder="Enter Secure Password"  onChange={(e)=>{
-                console.log(isDisabled)
+            
                 validate(e.target.value)
 
              }} />
@@ -57,27 +59,27 @@ export default function Mental(){
          <h1 className="font-bold">password requirements</h1>
           <div className="flex flex-col items-center w-full">
             <label htmlFor="At least 8 characters">
-              <input type="radio" name="char" checked={value.char} />
+              <input type="checkbox" name="char" checked={value.char} />
               <span>At least 8 characters</span>
             </label>
             <label htmlFor="At least 8 characters">
-              <input type="radio" name="upper" checked={value.upper} />
+              <input type="checkbox" name="upper" checked={value.upper} />
               <span>contains uppercase</span>
             </label>
             <label htmlFor="At least 8 characters">
-              <input type="radio" name="lower" checked={value.lower} />
+              <input type="checkbox" name="lower" checked={value.lower} />
               <span>contains lowercase</span>
             </label>
             <label htmlFor="At least 8 characters">
-              <input type="radio" name="digit" checked={value.digit} />
+              <input type="checkbox" name="digit" checked={value.digit} />
               <span>contains a digit</span>
             </label>
             <label htmlFor="At least 8 characters">
-              <input type="radio" name="special" checked={value.special} />
+              <input type="checkbox" name="special" checked={value.special} />
               <span>contains a special </span>
             </label>
             </div>
-         <button className={`${isDisabled?"bg-gray-300":"bg-gray-700"} rounded-md p-2 text-2xl text-white`} disabled={isDisabled}> Submit</button>
+         <button className={`${isDisabled?"bg-gray-300":"bg-gray-700"} rounded-md p-2 text-2xl text-white`} disabled={isDisabled} onClick={()=>{alert(value.value)}}> Submit</button>
         </form>
         </div>
     )
