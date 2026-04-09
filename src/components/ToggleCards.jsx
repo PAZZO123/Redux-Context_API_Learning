@@ -31,7 +31,7 @@ function CardList() {
   return (
     <div>
       <div>
-        {!allShown?cardElements.slice(0,3):cardElements}
+        {!allShown?cardElements.slice(0,4):cardElements}
       </div>
       <div className="buttons">
         {cardsData.length>4&&<button onClick={()=>setAllShown(prev=>!prev)}>{allShown?"Show Less":"Show More..."}</button>}
