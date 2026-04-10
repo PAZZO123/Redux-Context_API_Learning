@@ -1,6 +1,7 @@
 import Login from './components/Login'
 import Profile from './components/Profile'
 import ChangeColor from './components/ChangeColor'
+import Usememo from './components/Usememo'
 
 export default function App(){
   return(
@@ -9,6 +10,7 @@ export default function App(){
      <Profile/>
      <Login/>
      <ChangeColor/>
+     <Usememo/>
  
     </div>
     </>
