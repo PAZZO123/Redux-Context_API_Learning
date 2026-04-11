@@ -1,7 +1,7 @@
+import ChangeColor from './components/ChangeColor'
 import Login from './components/Login'
 import Profile from './components/Profile'
-import ChangeColor from './components/ChangeColor'
-import Usememo from './components/Usememo'
+import ParentComponent from './usecallback/ParentComponent'
 
 export default function App(){
   return(
@@ -10,7 +10,7 @@ export default function App(){
      <Profile/>
      <Login/>
      <ChangeColor/>
-     <Usememo/>
+     <ParentComponent/>
  
     </div>
     </>
