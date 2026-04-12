@@ -1,7 +1,7 @@
 import ChangeColor from './components/ChangeColor'
 import Login from './components/Login'
 import Profile from './components/Profile'
-import ProductList from './Uk_question/ProductList'
+import UserProfileDemo from './Uk_question/UserProfileDemo'
 
 export default function App(){
   return(
@@ -10,7 +10,7 @@ export default function App(){
      <Profile/>
      <Login/>
      <ChangeColor/>
-     <ProductList/>
+   <UserProfileDemo/>
    
  
     </div>
