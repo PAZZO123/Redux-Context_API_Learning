@@ -10,16 +10,16 @@ export default  function useGetUserById(userId){
         async function fetchData(){
          setLoading(true)
           try{
-             const [userRes, postRes]=await Promise.all([fetch(`https://jsonplaceholder.typicode.com/users/${userId}`), fetch(`https://jsonplaceholder.typicode.com/posts`)])
+             const [userRes, postRes]=await Promise.all([fetch(`https://jsonplaceholder.typicode.com/users/${userId}`), fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)])
            if(!userRes.ok||!postRes.ok) throw new Error('Something Went Wrong When Fetching')
 
             const userData=await userRes.json()
             const postData=await postRes.json()
             console.log()
             console.log("USERTTTTTTTTTTTT:", userData)
-            console.log("Posaaaaaaaaaaaaaaa", postData.filter(post=>post.userId===userId))
+            console.log("Posaaaaaaaaaaaaaaa", postData)
             setUser(userData)
-            setPosts(postData.filter(post=>post.userId===userId))
+            setPosts(postData)
           }catch(err){
             setError(err)
 
